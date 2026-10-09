@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Me | Mifred Fashion</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: white;
+        }
+
+        /* NAVIGATION */
+        nav {
+            height: 75px;
+            background: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 35px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #f06aa5;
+        }
+
+        /* PAGE HEADER */
+        .page-header {
+            text-align: center;
+            padding: 75px 20px 50px;
+            background: #111;
+        }
+
+        .page-header p {
+            color: #f06aa5;
+            letter-spacing: 5px;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .page-header h1 {
+            font-family: Georgia, serif;
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .page-header h1 span {
+            color: #f06aa5;
+        }
+
+        .page-header .line {
+            width: 70px;
+            height: 3px;
+            background: #f06aa5;
+            margin: auto;
+        }
+
+        /* ABOUT SECTION */
+        .about-section {
+            background: #fff;
+            color: #222;
+            padding: 70px 25px;
+        }
+
+        .about-container {
+            max-width: 1000px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+        /* PHOTO */
+        .about-photo {
+            text-align: center;
+        }
+
+        .about-photo img {
+            width: 100%;
+            max-width: 420px;
+            height: 520px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+        }
+
+        /* TEXT */
+        .about-text h2 {
+            font-family: Georgia, serif;
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .about-text h2 span {
+            color: #f06aa5;
+        }
+
+        .about-text p {
+            color: #555;
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        /* VALUES */
+        .values {
+            background: #111;
+            padding: 70px 25px;
+            text-align: center;
+        }
+
+        .values h2 {
+            font-family: Georgia, serif;
+            font-size: 35px;
+            margin-bottom: 40px;
+        }
+
+        .values h2 span {
+            color: #f06aa5;
+        }
+
+        .value-container {
+            max-width: 1000px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .value-box {
+            border: 1px solid #444;
+            border-radius: 10px;
+            padding: 30px 20px;
+            transition: 0.3s;
+        }
+
+        .value-box:hover {
+            border-color: #f06aa5;
+            transform: translateY(-5px);
+        }
+
+        .value-icon {
+            font-size: 35px;
+            color: #f06aa5;
+            margin-bottom: 15px;
+        }
+
+        .value-box h3 {
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+
+        .value-box p {
+            color: #bbb;
+            line-height: 1.6;
+        }
+
+        /* CALL TO ACTION */
+        .cta {
+            background: #fff;
+            color: #222;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .cta h2 {
+            font-family: Georgia, serif;
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #f06aa5;
+            color: white;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #111;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #111;
+            text-align: center;
+            padding: 25px 20px;
+            color: #999;
+            border-top: 1px solid #333;
+        }
+
+        footer span {
+            color: #f06aa5;
+        }
+
+        /* PHONE */
+        @media (max-width: 700px) {
+
+            nav {
+                height: 60px;
+                gap: 16px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .page-header {
+                padding: 55px 20px 40px;
+            }
+
+            .page-header h1 {
+                font-size: 38px;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .about-photo img {
+                height: 420px;
+            }
+
+            .about-text h2 {
+                font-size: 30px;
+            }
+
+            .value-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="Index.html">Home</a>
+        <a href="About me.html">About Me</a>
+        <a href="Gallery.html">Gallery</a>
+        <a href="Index.html#contact">Contact</a>
+    </nav>
+
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+
+        <p>GET TO KNOW ME</p>
+
+        <h1>About <span>Mifred Fashion</span></h1>
+
+        <div class="line"></div>
+
+    </section>
+
+
+    <!-- ABOUT ME -->
+    <section class="about-section">
+
+        <div class="about-container">
+
+            <!-- MAIN PHOTO -->
+            <div class="about-photo">
+
+                <img
+                    src="Images/main.png"
+                    alt="Mifred Fashion">
+
+            </div>
+
+
+            <!-- TEXT -->
+<div class="about-text">
+
+    <h2>
+        My <span>Story</span>
+    </h2>
+
+    
+      <p style="margin-bottom: 5px;">Welcome to Mifred Fashion.</p>
+<p style="margin-top: 0;">Fashion is a beautiful way to express creativity, confidence, and individuality.</p>
+
+    <p>
+        I created Mifred Fashion as a space where ideas, styles, and
+        creative designs come together. Every look is inspired by the
+        belief that fashion should feel unique, meaningful, and personal.
+    </p>
+
+    <p>
+        Through my designs and fashion projects, I aim to explore new
+        styles, develop creative ideas, and create designs that reflect
+        originality and elegance.
+    </p>
+
+    <p>
+        Mifred Fashion represents creativity, passion, and the continuous
+        journey of discovering new possibilities through fashion.
+    </p>
+
+</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- VALUES -->
+    <section class="values">
+
+        <h2>
+            What <span>Fashion Means</span> To Me
+        </h2>
+
+        <div class="value-container">
+
+            <div class="value-box">
+
+                <div class="value-icon">✦</div>
+
+                <h3>Creativity</h3>
+
+                <p>
+                    Exploring new ideas and turning imagination
+                    into beautiful fashion concepts.
+                </p>
+
+            </div>
+
+
+            <div class="value-box">
+
+                <div class="value-icon">♡</div>
+
+                <h3>Confidence</h3>
+
+                <p>
+                    Fashion can be a wonderful way to express
+                    yourself with confidence.
+                </p>
+
+            </div>
+
+
+            <div class="value-box">
+
+                <div class="value-icon">✧</div>
+
+                <h3>Style</h3>
+
+                <p>
+                    Discovering unique looks and creating styles
+                    that feel personal and expressive.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CALL TO ACTION -->
+    <section class="cta">
+
+        <h2>Explore My Fashion</h2>
+
+        <p>
+            Take a look at my latest fashion designs and creative work.
+        </p>
+
+        <a href="Gallery.html" class="button">
+            View My Gallery →
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        © 2026 <span>Mifred Fashion</span>. All Rights Reserved.
+
+    </footer>
+
+</body>
+</html>

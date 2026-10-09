@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mifred Fashion Gallery</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: white;
+        }
+
+        /* NAVIGATION */
+        nav {
+            background: #111;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #f06aa5;
+        }
+
+        /* TITLE */
+        .gallery-title {
+            text-align: center;
+            padding: 45px 20px 30px;
+        }
+
+        .gallery-title h1 {
+            font-family: Georgia, serif;
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .gallery-title p {
+            color: #bbb;
+        }
+
+        /* GALLERY */
+        .gallery {
+            max-width: 1000px;
+            margin: auto;
+            padding: 10px 20px 60px;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.02);
+        }
+
+        /* IMAGE VIEWER */
+        .viewer {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .viewer img {
+            max-width: 95%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* PHONE */
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 16px 8px;
+            }
+
+            nav a {
+                margin: 0 6px;
+                font-size: 13px;
+            }
+
+            .gallery-title h1 {
+                font-size: 30px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            .gallery img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="Index.html">Home</a>
+        <a href="About me.html">About Me</a>
+        <a href="Gallery.html">Gallery</a>
+    </nav>
+
+
+    <!-- TITLE -->
+    <section class="gallery-title">
+
+        <h1>Mifred Fashion Gallery</h1>
+
+        <p>
+            Explore my fashion designs and creative styles.
+        </p>
+
+    </section>
+
+
+    <!-- GALLERY -->
+    <div class="gallery">
+
+        <img src="Images/photo 1.jpg" alt="Fashion photo 1" onclick="openImage(this.src)">
+
+        <img src="Images/photo 2.jpg" alt="Fashion photo 2" onclick="openImage(this.src)">
+
+        <img src="Images/photo 3.png" alt="Fashion photo 3" onclick="openImage(this.src)">
+
+        <img src="Images/photo 4.png" alt="Fashion photo 4" onclick="openImage(this.src)">
+
+        <img src="Images/photo 5.png" alt="Fashion photo 5" onclick="openImage(this.src)">
+
+        <img src="Images/photo 6.png" alt="Fashion photo 6" onclick="openImage(this.src)">
+
+        <img src="Images/photo 7.png" alt="Fashion photo 7" onclick="openImage(this.src)">
+
+    </div>
+
+
+    <!-- FULL IMAGE VIEWER -->
+    <div class="viewer" id="viewer" onclick="closeImage()">
+
+        <span class="close">&times;</span>
+
+        <img id="largeImage" src="" alt="Large fashion image">
+
+    </div>
+
+
+    <script>
+
+        function openImage(imageSource) {
+            document.getElementById("viewer").style.display = "flex";
+            document.getElementById("largeImage").src = imageSource;
+        }
+
+        function closeImage() {
+            document.getElementById("viewer").style.display = "none";
+        }
+
+    </script>
+
+</body>
+</html>
